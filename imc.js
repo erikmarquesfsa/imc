@@ -2,8 +2,8 @@ let botaoCalcular = document.getElementById("btnCalcular");
 
 function calculandoIMC() {
   let peso = document.getElementById("peso").value;
-  let altura = document.getElementById("altura").value;
-  let resultado = document.getElementById("resultado").value;
+  let altura = document.getElementById("altura").value/100;
+  let resultado = document.getElementById("resultado");
 
   if (altura !== "" && peso !== "") {
     let imc = (peso / (altura * altura)).toFixed(1);
@@ -23,7 +23,7 @@ function calculandoIMC() {
       mensagem = "Obesidade grau III.";
     }
 
-    resultado.textContent = "O seu IMC é: " + imc + " . " + mensagem;
+    resultado.textContent = "O seu IMC é: " +imc+ " . " +mensagem;
   } else {
     resultado.textContent = "Por favor, preencha todos os campos";
   }
